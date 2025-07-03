@@ -1,6 +1,6 @@
 // src/stores/tasks.js
 import { defineStore } from 'pinia'
-import { api } from 'boot/api'
+import { api } from 'boot/axios'
 import { Notify } from 'quasar'
 
 export const useTaskStore = defineStore('tasks', {
