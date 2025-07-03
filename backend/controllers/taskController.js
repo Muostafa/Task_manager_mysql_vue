@@ -10,7 +10,10 @@ const createTask = async (req, res, next) => {
 
     const { title, description } = req.body;
     const taskId = await Task.create(req.user.id, title, description);
-    res.status(201).json({ message: "Task created successfully", taskId });
+
+    const newTask = await Task.findById(taskId, req.user.id);
+
+    res.status(201).json(newTask);
   } catch (err) {
     next(err);
   }
@@ -52,7 +55,9 @@ const updateTask = async (req, res, next) => {
     }
 
     await Task.update(req.params.id, title, description, status || task.status);
-    res.json({ message: "Task updated successfully" });
+
+    const updatedTask = await Task.findById(req.params.id, req.user.id);
+    res.json(updatedTask);
   } catch (err) {
     next(err);
   }
@@ -66,7 +71,8 @@ const deleteTask = async (req, res, next) => {
     }
 
     await Task.delete(req.params.id);
-    res.json({ message: "Task deleted successfully" });
+
+    res.json({ message: "Task deleted successfully", id: req.params.id });
   } catch (err) {
     next(err);
   }
