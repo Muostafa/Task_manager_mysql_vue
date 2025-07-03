@@ -30,7 +30,9 @@
       </div>
     </div>
 
-    <TaskFormDialog v-model="showTaskDialog" :task="taskToEdit" @save="onTaskSave" />
+    <div v-if="showTaskDialog">
+      <TaskFormDialog v-model="showTaskDialog" :task="taskToEdit" @save="onTaskSave" />
+    </div>
   </q-page>
 </template>
 
