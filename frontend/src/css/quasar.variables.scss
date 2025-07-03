@@ -1,25 +1,59 @@
-// Quasar SCSS (& Sass) Variables
-// --------------------------------------------------
-// To customize the look and feel of this app, you can override
-// the Sass/SCSS variables found in Quasar's source Sass/SCSS files.
+// --- 1. BRANDING & CORE COLORS ---
+// These are the foundational colors of your application's brand.
+//
+$primary: #5465ff; // A modern, friendly blue for main actions.
+$secondary: #788593; // A neutral, muted color for secondary text and elements.
+$accent: #ff8a00; // A vibrant orange for highlights, call-to-actions, and accents.
 
-// Check documentation for full list of Quasar variables
+// --- 2. THEME & STATE COLORS ---
+// These colors provide feedback to the user (success, error, etc.).
+// Using slightly desaturated colors can look more professional than pure hex codes.
+//
+$positive: #28a745; // Green for success
+$negative: #dc3545; // Red for errors
+$info: #17a2b8; // Blue for informational messages
+$warning: #ffc107; // Yellow for warnings
 
-// Your own variables (that are declared here) and Quasar's own
-// ones will be available out of the box in your .vue/.scss/.sass files
+// --- 3. DARK MODE THEME ---
+// A good dark theme uses shades of dark gray, not pure black, to reduce eye strain
+// and create a sense of depth.
+//
+$dark-page: #191c21; // The darkest color, for the main page background.
+$dark: #232830; // A slightly lighter "surface" color for cards, toolbars, dialogs.
+// We can add our own variable for hover/active states in dark mode.
+$dark-active: #323a46;
 
-// It's highly recommended to change the default colors
-// to match your app's branding.
-// Tip: Use the "Theme Builder" on Quasar's documentation website.
+// --- 4. TYPOGRAPHY ---
+// A custom font can dramatically change the feel of your app.
+// Be sure to import it from Google Fonts or host it yourself.
+//
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
-$primary   : #1976D2;
-$secondary : #26A69A;
-$accent    : #9C27B0;
+$typography-font-family:
+  'Inter',
+  -apple-system,
+  sans-serif;
+$typography-line-height: 1.6; // Increase line-height for better text readability.
+$h4-font-size: 1.75rem; // Example of adjusting specific heading sizes.
 
-$dark      : #1D1D1D;
-$dark-page : #121212;
+// --- 5. LAYOUT & SPACING ---
+// A consistent border-radius across all components creates a unified look.
+//
+$border-radius-root: 6px; // Small radius for a modern, clean look.
 
-$positive  : #21BA45;
-$negative  : #C10015;
-$info      : #31CCEC;
-$warning   : #F2C037;
+// --- 6. COMPONENT-SPECIFIC OVERRIDES ---
+// You have fine-grained control over individual components. This is powerful for
+// refining your design system.
+// Find these variables in the Quasar docs on each component's page ("Style" tab).
+//
+// Example: Buttons
+$button-border-radius: 4px; // Make buttons slightly less rounded than the root.
+$button-text-transform: none; // A common request: stop buttons from being ALL CAPS.
+$button-padding: 0.5em 1em; // Adjust button padding.
+
+// Example: Cards
+$card-border-radius: 8px; // Make cards more rounded.
+$card-box-shadow: 0 4px 10px rgba($dark, 0.08);
+
+// Example: Inputs
+$input-border-radius: 4px; // Match button radius.
