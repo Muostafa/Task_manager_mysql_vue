@@ -78,7 +78,16 @@ export default defineConfig((/* ctx */) => {
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#framework
     framework: {
-      config: {},
+      config: {
+        loading: {
+          spinner: 'QSpinnerDots',
+          spinnerColor: 'primary',
+          spinnerSize: 80,
+          backgroundColor: 'black',
+          message: 'Loading...',
+          messageColor: 'white',
+        },
+      },
 
       // iconSet: 'material-icons', // Quasar icon set
       // lang: 'en-US', // Quasar language pack
