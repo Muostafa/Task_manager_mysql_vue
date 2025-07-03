@@ -6,14 +6,8 @@
       <q-btn label="Add Task" color="primary" icon="add" @click="openCreateDialog" />
     </div>
 
-    <!-- Loading State -->
-    <div v-if="taskStore.loading && !taskStore.tasks.length" class="text-center q-mt-xl">
-      <q-spinner-dots color="primary" size="4em" />
-      <div class="q-mt-md text-grey-8">Loading tasks...</div>
-    </div>
-
     <!-- Error State -->
-    <div v-else-if="taskStore.error" class="text-center q-mt-xl">
+    <div v-if="taskStore.error" class="text-center q-mt-xl">
       <q-icon name="error" color="negative" size="4em" />
       <div class="q-mt-md text-negative">{{ taskStore.error }}</div>
       <q-btn label="Retry" color="primary" @click="taskStore.fetchTasks" class="q-mt-md" />
